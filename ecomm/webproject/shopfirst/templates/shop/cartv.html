@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Online Store{% endblock title %}
+{% block main %}
+<div class="row">
+          <div class="col-lg-8 col-md-12 mb-8">
+            <table class="table table-border">
+                <thead>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Quantity</th>
+                <th>Total</th>
+                <th>Remove</th>
+                </thead>
+                <tbody>
+                {% for cart in mycart%}
+                <tr>
+                    <td>{{cart.product_name}}</td>
+                    <td>{{cart.product_price}}</td>
+                    <td>{{cart.total}}</td>
+
+                    <td>{% widthratio cart.product_price 1 cart.total %}</td>
+                    <td><a href="/delete/{{cart.product_id}}" class="btn btn-info">Remove</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+          </div>
+</div>
+{% endblock main %}

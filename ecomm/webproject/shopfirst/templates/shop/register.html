@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Online Store{% endblock title %}
+{% block main %}
+<form method="POST" class="post-form" action="/register">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Enter Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Your Name</label>
+    <div class="col-sm-4">
+      {{ form.cust_name }}
+    </div>
+  </div>
+         <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Your Mobile</label>
+    <div class="col-sm-4">
+      {{ form.cust_mobile }}
+    </div>
+  </div>
+         <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Your email</label>
+    <div class="col-sm-4">
+      {{ form.cust_email }}
+    </div>
+  </div>
+                 <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Your password</label>
+    <div class="col-sm-4">
+      {{ form.cust_password }}
+    </div>
+  </div>
+
+         <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Your role</label>
+    <div class="col-sm-4">
+      {{ form.cust_role }}
+    </div>
+  </div>
+        <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+    </div>
+</form>
+{% endblock main %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Online Store{% endblock title %}
+{% block main %}
+<div class="row">
+          {% for product in products %}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="/media/{{product.pic}}" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">{{product.product_name}}</a>
+                </h4>
+                <h5>{{product.product_price}}</h5>
+                <p class="card-text">{{product.product_detils}}</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  <a href="/add/{{product.id}}" class="btn btn-info">Buy</a>
+              </div>
+            </div>
+          </div>
+    {% endfor %}
+
+        </div>
+{% endblock main %}
